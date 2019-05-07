@@ -18,8 +18,8 @@ function init() {
 	camera.position.y = 10; // move up a bit
 	scene.add(camera);
 
-	let light = new THREE.AmbientLight(0xfffffff, 1); // color, intensity
-	light.position.set(1, 1, 1); // location x, y, z
+	let light = new THREE.AmbientLight(0xfffffff, 1); 
+	light.position.set(1, 1, 1); 
 	scene.add(light);
 
 	// video as texture

@@ -18,8 +18,8 @@ function init() {
 	camera.position.y = 10; // move up a bit
 	scene.add(camera);
 
-	let light = new THREE.AmbientLight(0xfffffff, 1); // color, intensity
-	light.position.set(1, 1, 1); // location x, y, z
+	let light = new THREE.AmbientLight(0xfffffff, 1); 
+	light.position.set(1, 1, 1); 
 	scene.add(light);
 
 	// video as texture
@@ -108,19 +108,6 @@ function animate() {
 	controls.update(); 
 
 }
-
-// window.onload = function() { 
-//  const vids = document.getElementById('video');
-
-//  for (let i = 0; i < vids.length; i++) {
-//    vids[i].addEventListener( 'mouseover', function(e) { 
-//      vids[i].play();
-//    })
-//    vids[i].addEventListener( 'mouseout', function(e) {
-//      vids[i].pause();
-//    })
-//  }
-// }
 
 init();
 animate();
