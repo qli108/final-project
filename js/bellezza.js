@@ -10,7 +10,7 @@ function init() {
 
 	// cube map
 	scene.background = new THREE.CubeTextureLoader()
-		.setPath('images/Lungotevere/')
+		.setPath('../images/Lungotevere/')
 		.load( ['posx.png', 'negx.png', 'posy.png', 'negy.png', 'posz.png', 'negz.png']);
 
 	camera = new THREE.PerspectiveCamera(60, w/h, 100, 25000);
@@ -46,39 +46,37 @@ function init() {
 	let sphereGeometry = new THREE.SphereGeometry(50, 50, 50);
 	let material = new THREE.MeshBasicMaterial( {map: texture} );
 	let sphere = new THREE.Mesh(sphereGeometry, material);
+	sphere.position.x = -70;
+	sphere.position.y = 0;
 	scene.add(sphere);
 
 	let sphereGeometry2 = new THREE.SphereGeometry(50, 50, 50);
 	let material2 = new THREE.MeshBasicMaterial( {map: texture2} );
 	let sphere2 = new THREE.Mesh(sphereGeometry2, material2);
-	sphere2.position.y = -150;
+	sphere2.position.x = 70;
+	sphere2.position.y = 0;
 	scene.add(sphere2);
 
 	let sphereGeometry3 = new THREE.SphereGeometry(50, 50, 50);
 	let material3 = new THREE.MeshBasicMaterial( {map: texture3} );
 	let sphere3 = new THREE.Mesh(sphereGeometry3, material3);
-	sphere3.position.y = 150;
+	sphere3.position.x = 0;
+	sphere3.position.y = 70;
 	scene.add(sphere3);
 
 	let sphereGeometry4 = new THREE.SphereGeometry(50, 50, 50);
 	let material4 = new THREE.MeshBasicMaterial( {map: texture4} );
 	let sphere4 = new THREE.Mesh(sphereGeometry4, material4);
-	sphere4.position.x = 150;
+	sphere4.position.x = 50;
+	sphere4.position.y = -100;
 	scene.add(sphere4);
 
 	let sphereGeometry5 = new THREE.SphereGeometry(50, 50, 50);
 	let material5 = new THREE.MeshBasicMaterial( {map: texture5} );
 	let sphere5 = new THREE.Mesh(sphereGeometry5, material5);
-	sphere5.position.x = 150;
-	sphere5.position.y = -150;
+	sphere5.position.x = -50;
+	sphere5.position.y = -100;
 	scene.add(sphere5);
-
-	let sphereGeometry6 = new THREE.SphereGeometry(50, 50, 50);
-	let material6 = new THREE.MeshBasicMaterial( {map: texture6} );
-	let sphere6 = new THREE.Mesh(sphereGeometry6, material6);
-	sphere6.position.x = 150;
-	sphere6.position.y = 150;
-	scene.add(sphere6);
 
 	renderer = new THREE.WebGLRenderer({alpha: 1, antialias: true});
   	renderer.setSize(w, h);
@@ -102,7 +100,7 @@ function animate() {
 
 	time += 0.005;
 	camera.position.x = Math.sin(time) * 400;
-	camera.position.z = Math.cos(time) * 200;
+	camera.position.z = Math.cos(time) * 400;
     camera.position.y = Math.cos(time) * 100;
 
 	requestAnimationFrame(animate);
@@ -111,6 +109,18 @@ function animate() {
 
 }
 
+// window.onload = function() { 
+//  const vids = document.getElementById('video');
+
+//  for (let i = 0; i < vids.length; i++) {
+//    vids[i].addEventListener( 'mouseover', function(e) { 
+//      vids[i].play();
+//    })
+//    vids[i].addEventListener( 'mouseout', function(e) {
+//      vids[i].pause();
+//    })
+//  }
+// }
+
 init();
 animate();
-
