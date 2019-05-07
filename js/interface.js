@@ -76,3 +76,4 @@ function canvas3() {
   
   switchLinks3(link3);  
 }
+
