@@ -2,42 +2,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Choose Your World</title>
-  
+  	<link rel="icon" type="image/jpg" href="images/tv.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 	
+	<canvas id="canvas" width="0" height="0">Your browser does not support the HTML 5 Canvas.
+	</canvas>
 
-	<div id="frame">
-      <canvas id="c1" width="600" height="400"></canvas>
-        <div style="display: none">
-          <img id="bellezza" src="images/bellezza.png">
-        </div>
-      <canvas id="c2" width="600" height="400">
-        <div style="display: none">
-          <img id="columbus" src="images/columbus.jpg">
-        </div>
-         <!-- <div style="display: none">
-          <video autoplay loop muted playsinline src="intro.mov"></video>
-        </div> -->
-      </canvas>
-      <canvas id="c3" width="600" height="400"></canvas>
-      <div style="display: none">
-        <img id="mood" src="images/mood.jpg">
-      </div>
+	<span id="page1" style="display:hidden"> 
+	<a  href="pages/bellezza.html"><img id="page1Background" src="images/tv.png"></a>
+	</span>
 
-  </div>
+	<canvas id="canvas2" width="0" height="0">Your browser does not support the HTML 5 Canvas.
+	</canvas>
 
-  <!-- <div style="display: none">
-    <img id="tv" src="images/tv.png" alt="80s television">
-  </div> -->
+	<span id="page2" style="display:hidden"> 
+	<a href="pages/columbus.html"><img id="page2Background" src="images/tv.png"></a>
+	</span>
 
-  <a href="pages/bellezza.html">La Grande Bellezza</a>
-  <a href="pages/columbus.html">Columbus</a>
-  <a href="pages/mood.html">In the Mood for Love</a>
+	<canvas id="canvas3" width="0" height="0">Your browser does not support the HTML 5 Canvas.
+	</canvas>
 
-  
+	<span id="page3" style="display:hidden"> 
+	<a href="pages/mood.html"><img id="page3Background" src="images/tv.png"></a>
+	</span>
 
-  <script src="js/interface.js"></script>
+	
+
+	
+	<!-- <a href="pages/bellezza.html" id="link1">La Grande Bellezza</a>
+	<a href="pages/columbus.html" id="link2">Columbus</a>
+	<a href="pages/mood.html" id="link3">In the Mood for Love</a>
+	 -->
+   
+
+    <div style="display: none">
+      <img src="images/tv.png" alt="80s television">
+    </div>
+
+    <script src="js/interface.js"></script>
+
 </body>
 </html>

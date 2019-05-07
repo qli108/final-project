@@ -1,21 +1,93 @@
 body {
+  background-image: url('images/background.jpg');
+  background-size: cover;
   margin: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow:hidden;
 }
 
-#frame {
-  width: 1960px;
-  height: 400px;
-  margin: auto;
-  display: flex;
-  flex-shrink: 0;
-  justify-content: space-evenly;
+
+/*Canvas 1*/
+#page1Background {
+  position: absolute;
+  height: 100%;
+  width: 120%;
 }
 
-canvas {
-  width: 500px;
-  height: 400px;
+#page1Background:hover {
+  opacity: 0.3;
 }
+
+#page1 {
+  position: absolute;
+  height: 15%;
+  width: 10%;
+  top: 50%;
+  left: 10%;
+}
+
+#page1:hover {
+  background-image: url('images/bellezza.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+}
+
+/*Canvas 2*/
+#page2Background {
+  position: absolute;
+  height: 100%;
+  width: 120%;
+}
+
+#page2Background:hover {
+  opacity: 0.3;
+}
+
+#page2 {
+  position: absolute;
+  height: 15%;
+  width: 10%;
+  top: 50%;
+  left: 45%;
+}
+
+#page2:hover {
+  background-image: url('images/columbus.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+}
+
+/*Canvas 3*/
+#page3Background {
+  position: absolute;
+  height: 100%;
+  width: 120%;
+}
+
+#page3Background:hover {
+  opacity: 0.3;
+}
+
+#page3 {
+  position: absolute;
+  height: 15%;
+  width: 10%;
+  top: 50%;
+  left: 80%;
+}
+
+#page3:hover {
+  background-image: url('images/mood.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+}
+
+
+
+    
     
