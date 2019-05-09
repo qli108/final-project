@@ -11,15 +11,15 @@ function init() {
 	// cube map
 	scene.background = new THREE.CubeTextureLoader()
 		.setPath('../images/Columbus/')
-		.load( ['posx.png', 'negx.png', 'posy.png', 'negy.png', 'posz.png', 'negz.png']);
+		.load( ['0004.png', '0002.png', '0006.png', '0005.png', '0001.png', '0003.png']);
 
-	camera = new THREE.PerspectiveCamera(60, w/h, 100, 3000);
-	camera.position.z = 1000; // back out a bit
-	camera.position.y = 100; // move up a bit
+	camera = new THREE.PerspectiveCamera(30, w/h, 60, 3000);
+	camera.position.z = 2000; // back out a bit
+	camera.position.y = 60; // move up a bit
 	scene.add(camera);
 
 	let light = new THREE.AmbientLight(0xfffffff, 1); 
-	light.position.set(1, 1, 1); 
+	light.position.set(1,1,1); 
 	scene.add(light);
 
 	// video as texture
@@ -50,62 +50,66 @@ function init() {
 	var texture8 = new THREE.VideoTexture( video8 );
 	video8.play();
 
-	// Plane 
-	let PlaneGeometry = new THREE.PlaneGeometry(100, 50, 32);
+	// Box 
+	let BoxGeometry = new THREE.BoxGeometry(60, 30, 10);
 	let material = new THREE.MeshBasicMaterial( {map: texture} );
-	let Plane = new THREE.Mesh(PlaneGeometry, material);
-	Plane.position.x = -50;
-	Plane.position.y = -95;
-	scene.add(Plane);
+	let Box = new THREE.Mesh(BoxGeometry, material);
+	Box.position.x = -30;
+	Box.position.y = -95;
+	Box.position.z = 10;
+	scene.add(Box);
 
-	let PlaneGeometry2 = new THREE.PlaneGeometry(100, 50, 32);
+	let BoxGeometry2 = new THREE.BoxGeometry(60, 30, 10);
 	let material2 = new THREE.MeshBasicMaterial( {map: texture2} );
-	let Plane2 = new THREE.Mesh(PlaneGeometry2, material2);
-	Plane2.position.x = 55;
-	Plane2.position.y = -95;
-	scene.add(Plane2);
+	let Box2 = new THREE.Mesh(BoxGeometry2, material2);
+	Box2.position.x = 55;
+	Box2.position.y = -95;
+	scene.add(Box2);
 
-	let PlaneGeometry3 = new THREE.PlaneGeometry(100, 50, 32);
+	let BoxGeometry3 = new THREE.BoxGeometry(60, 30, 10);
 	let material3 = new THREE.MeshBasicMaterial( {map: texture3} );
-	let Plane3 = new THREE.Mesh(PlaneGeometry3, material3);
-	Plane3.position.x = -50;
-	Plane3.position.y = -40;
-	scene.add(Plane3);
+	let Box3 = new THREE.Mesh(BoxGeometry3, material3);
+	Box3.position.x = -30;
+	Box3.position.y = -40;
+	scene.add(Box3);
 
-	let PlaneGeometry4 = new THREE.PlaneGeometry(100, 50, 32);
+	let BoxGeometry4 = new THREE.BoxGeometry(60, 30, 10);
 	let material4 = new THREE.MeshBasicMaterial( {map: texture4} );
-	let Plane4 = new THREE.Mesh(PlaneGeometry4, material4);
-	Plane4.position.x = 55;
-	Plane4.position.y = -40;
-	scene.add(Plane4);
+	let Box4 = new THREE.Mesh(BoxGeometry4, material4);
+	Box4.position.x = 55;
+	Box4.position.y = -40;
+	Box4.position.z = 10;
+	scene.add(Box4);
 
-	let PlaneGeometry5 = new THREE.PlaneGeometry(100, 50, 32);
+	let BoxGeometry5 = new THREE.BoxGeometry(60, 30, 10);
 	let material5 = new THREE.MeshBasicMaterial( {map: texture5} );
-	let Plane5 = new THREE.Mesh(PlaneGeometry5, material5);
-	Plane5.position.x = -50;
-	Plane5.position.y = 15;
-	scene.add(Plane5);
+	let Box5 = new THREE.Mesh(BoxGeometry5, material5);
+	Box5.position.x = -30;
+	Box5.position.y = 15;
+	Box5.position.z = 10;
+	scene.add(Box5);
 
-	let PlaneGeometry6 = new THREE.PlaneGeometry(100, 50, 32);
+	let BoxGeometry6 = new THREE.BoxGeometry(60, 30, 10);
 	let material6 = new THREE.MeshBasicMaterial( {map: texture6} );
-	let Plane6 = new THREE.Mesh(PlaneGeometry6, material6);
-	Plane6.position.x = 55;
-	Plane6.position.y = 15;
-	scene.add(Plane6);
+	let Box6 = new THREE.Mesh(BoxGeometry6, material6);
+	Box6.position.x = 55;
+	Box6.position.y = 15;
+	scene.add(Box6);
 
-	let PlaneGeometry7 = new THREE.PlaneGeometry(100, 50, 32);
+	let BoxGeometry7 = new THREE.BoxGeometry(60, 30, 10);
 	let material7 = new THREE.MeshBasicMaterial( {map: texture7} );
-	let Plane7 = new THREE.Mesh(PlaneGeometry7, material7);
-	Plane7.position.x = -50;
-	Plane7.position.y = 70;
-	scene.add(Plane7);
+	let Box7 = new THREE.Mesh(BoxGeometry7, material7);
+	Box7.position.x = -30;
+	Box7.position.y = 70;
+	scene.add(Box7);
 
-	let PlaneGeometry8 = new THREE.PlaneGeometry(100, 50, 32);
+	let BoxGeometry8 = new THREE.BoxGeometry(60, 30, 10);
 	let material8 = new THREE.MeshBasicMaterial( {map: texture8} );
-	let Plane8 = new THREE.Mesh(PlaneGeometry8, material8);
-	Plane8.position.x = 55;
-	Plane8.position.y = 70;
-	scene.add(Plane8);
+	let Box8 = new THREE.Mesh(BoxGeometry8, material8);
+	Box8.position.x = 55;
+	Box8.position.y = 70;
+	Box8.position.z = 10;
+	scene.add(Box8);
 
 	renderer = new THREE.WebGLRenderer({alpha: 1, antialias: true});
   	renderer.setSize(w, h);
@@ -127,13 +131,14 @@ function onWindowResized() {
 
 function animate() {
 
-	time += 0.0002;
-	camera.position.x = Math.sin(time) * 400;
-	camera.position.z = Math.cos(time) * 200;
-    camera.position.y = Math.cos(time) * 100;
+	time += 0.0008;
+	camera.position.x = Math.sin(time) * 600;
+	camera.position.z = Math.cos(time) * 600;
+    camera.position.y = Math.cos(time) * 10;
 
 	requestAnimationFrame(animate);
 	renderer.render(scene, camera);
+
 	controls.update(); 
 
 }

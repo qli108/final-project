@@ -10,16 +10,16 @@ function init() {
 
 	// cube map
 	scene.background = new THREE.CubeTextureLoader()
-		.setPath('../images/Lungotevere/')
-		.load( ['posx.png', 'negx.png', 'posy.png', 'negy.png', 'posz.png', 'negz.png']);
+		.setPath('../images/Parco/')
+		.load( ['0004.png', '0002.png', '0006.png', '0005.png', '0001.png', '0003.png']);
 
 	camera = new THREE.PerspectiveCamera(60, w/h, 100, 25000);
 	camera.position.z = 2000; // back out a bit
 	camera.position.y = 10; // move up a bit
 	scene.add(camera);
 
-	let light = new THREE.AmbientLight(0xfffffff, 1); 
-	light.position.set(1, 1, 1); 
+	let light = new THREE.AmbientLight(0xfffffff, 1); // color, intensity
+	light.position.set(1, 1, 1); // location x, y, z
 	scene.add(light);
 
 	// video as texture
@@ -100,14 +100,15 @@ function animate() {
 
 	time += 0.005;
 	camera.position.x = Math.sin(time) * 400;
-	camera.position.z = Math.cos(time) * 400;
-    camera.position.y = Math.cos(time) * 100;
+	camera.position.z = Math.cos(time) * 600;
+    camera.position.y = Math.cos(time) * 1;
 
 	requestAnimationFrame(animate);
 	renderer.render(scene, camera);
 	controls.update(); 
 
 }
+
 
 init();
 animate();

@@ -11,15 +11,15 @@ function init() {
 	// cube map
 	scene.background = new THREE.CubeTextureLoader()
 		.setPath('../images/Hong Kong/')
-		.load( ['posx.png', 'negx.png', 'posy.png', 'negy.png', 'posz.png', 'negz.png']);
+		.load( ['0004.png', '0002.png', '0006.png', '0005.png', '0003.png', '0001.png']);
 
 	camera = new THREE.PerspectiveCamera(60, w/h, 100, 25000);
 	camera.position.z = 2000; // back out a bit
 	camera.position.y = 10; // move up a bit
 	scene.add(camera);
 
-	let light = new THREE.AmbientLight(0xfffffff, 1); 
-	light.position.set(1, 1, 1); 
+	let light = new THREE.AmbientLight(0xfffffff, 1); // color, intensity
+	light.position.set(1, 1, 1); // location x, y, z
 	scene.add(light);
 
 	// video as texture
@@ -47,44 +47,59 @@ function init() {
 	var texture6 = new THREE.VideoTexture( video6 );
 	video6.play();
 
+	var video7 = document.getElementById( 'video7' );
+	var texture7 = new THREE.VideoTexture( video7 );
+	video7.play();
+
 	// Cylinder 
-	let CylinderGeometry = new THREE.CylinderGeometry(10, 10, 20, 30);
+	let CylinderGeometry = new THREE.CylinderGeometry(30, 30, 70, 300);
 	let material = new THREE.MeshBasicMaterial( {map: texture} );
 	let Cylinder = new THREE.Mesh(CylinderGeometry, material);
-	Cylinder.position.x = -140;
+	Cylinder.position.x = -150;
+	Cylinder.position.z = 50;
 	scene.add(Cylinder);
 
-	let CylinderGeometry2 = new THREE.CylinderGeometry(20, 20, 50, 30);
+	let CylinderGeometry2 = new THREE.CylinderGeometry(30, 30, 70, 30);
 	let material2 = new THREE.MeshBasicMaterial( {map: texture2} );
 	let Cylinder2 = new THREE.Mesh(CylinderGeometry2, material2);
-	Cylinder2.position.x = -110;
+	Cylinder2.position.x = -100;
+	Cylinder2.position.z = -50;
 	scene.add(Cylinder2);
 
 	let CylinderGeometry3 = new THREE.CylinderGeometry(30, 30, 70, 30);
 	let material3 = new THREE.MeshBasicMaterial( {map: texture3} );
 	let Cylinder3 = new THREE.Mesh(CylinderGeometry3, material3);
-	Cylinder3.position.x = -40;
-	Cylinder3.rotation.z = 50;
+	Cylinder3.position.x = -50;
+	Cylinder3.position.z = 50;
 	scene.add(Cylinder3);
 
 	let CylinderGeometry4 = new THREE.CylinderGeometry(30, 30, 70, 30);
 	let material4 = new THREE.MeshBasicMaterial( {map: texture4} );
 	let Cylinder4 = new THREE.Mesh(CylinderGeometry4, material4);
-	Cylinder4.position.x = 45;
-	Cylinder4.rotation.z = -50;
+	Cylinder4.position.x = 0;
+	Cylinder4.position.z = -50;
 	scene.add(Cylinder4);
 
-	let CylinderGeometry5 = new THREE.CylinderGeometry(20, 20, 50, 30);
+	let CylinderGeometry5 = new THREE.CylinderGeometry(30, 30, 70, 30);
 	let material5 = new THREE.MeshBasicMaterial( {map: texture5} );
 	let Cylinder5 = new THREE.Mesh(CylinderGeometry5, material5);
-	Cylinder5.position.x = 110;
+	Cylinder5.position.x = 50;
+	Cylinder5.position.z = 50;
 	scene.add(Cylinder5);
 
-	let CylinderGeometry6 = new THREE.CylinderGeometry(10, 10, 20, 30);
+	let CylinderGeometry6 = new THREE.CylinderGeometry(30, 30, 70, 30);
 	let material6 = new THREE.MeshBasicMaterial( {map: texture6} );
 	let Cylinder6 = new THREE.Mesh(CylinderGeometry6, material6);
-	Cylinder6.position.x = 140;
+	Cylinder6.position.x = 100;
+	Cylinder6.position.z = -50;
 	scene.add(Cylinder6);
+
+	let CylinderGeometry7 = new THREE.CylinderGeometry(30, 30, 70, 30);
+	let material7 = new THREE.MeshBasicMaterial( {map: texture7} );
+	let Cylinder7 = new THREE.Mesh(CylinderGeometry7, material7);
+	Cylinder7.position.x = 150;
+	Cylinder7.position.z = 50;
+	scene.add(Cylinder7);
 
 	renderer = new THREE.WebGLRenderer({alpha: 1, antialias: true});
   	renderer.setSize(w, h);
@@ -106,10 +121,10 @@ function onWindowResized() {
 
 function animate() {
 
-	time += 0.0005;
-	camera.position.x = Math.sin(time) * 400;
-	camera.position.z = Math.cos(time) * 200;
-    camera.position.y = Math.cos(time) * 100;
+	time += 0.0009;
+	camera.position.x = Math.sin(time) * 500;
+	camera.position.z = Math.cos(time) * 15;
+    camera.position.y = Math.cos(time) ;
 
 	requestAnimationFrame(animate);
 	renderer.render(scene, camera);

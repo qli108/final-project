@@ -77,3 +77,33 @@ function canvas3() {
   switchLinks3(link3);  
 }
 
+function mouseOver() {
+  document.getElementById("title1").innerHTML = "La Grande Bellezza";
+}
+
+function mouseOver2() {
+  document.getElementById("title2").innerHTML = "COLUMBUS";
+}
+
+function mouseOver3() {
+  document.getElementById("title3").innerHTML = "In the Mood for Love";
+}
+
+function mouseOut() {
+  document.getElementById("title1").innerHTML = "";
+}
+
+function mouseOut2() {
+  document.getElementById("title2").innerHTML = "";
+}
+
+function mouseOut3() {
+  document.getElementById("title3").innerHTML = "";
+}
+
+document.getElementById("page1Background").addEventListener("mouseover", mouseOver);
+document.getElementById("page1Background").addEventListener("mouseout", mouseOut);
+document.getElementById("page2Background").addEventListener("mouseover", mouseOver2);
+document.getElementById("page2Background").addEventListener("mouseout", mouseOut2);
+document.getElementById("page3Background").addEventListener("mouseover", mouseOver3);
+document.getElementById("page3Background").addEventListener("mouseout", mouseOut3);
